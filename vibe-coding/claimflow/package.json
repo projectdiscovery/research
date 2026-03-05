@@ -1,0 +1,45 @@
+{
+	"name": "claimflow",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "drizzle-kit migrate",
+		"db:push": "drizzle-kit push",
+		"db:studio": "drizzle-kit studio",
+		"db:seed": "npx tsx src/lib/server/seed.ts"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/adapter-node": "^5.5.3",
+		"@sveltejs/kit": "^2.50.2",
+		"@sveltejs/vite-plugin-svelte": "^6.2.4",
+		"@tailwindcss/vite": "^4.2.0",
+		"@types/uuid": "^10.0.0",
+		"autoprefixer": "^10.4.24",
+		"drizzle-kit": "^0.31.9",
+		"postcss": "^8.5.6",
+		"svelte": "^5.49.2",
+		"svelte-check": "^4.3.6",
+		"tailwindcss": "^4.2.0",
+		"tsx": "^4.21.0",
+		"typescript": "^5.9.3",
+		"vite": "^7.3.1"
+	},
+	"dependencies": {
+		"@libsql/client": "^0.17.0",
+		"@skeletonlabs/skeleton": "^3.2.2",
+		"@skeletonlabs/skeleton-svelte": "^1.5.3",
+		"date-fns": "^4.1.0",
+		"drizzle-orm": "^0.45.1",
+		"lucide-svelte": "^0.574.0",
+		"uuid": "^13.0.0"
+	}
+}

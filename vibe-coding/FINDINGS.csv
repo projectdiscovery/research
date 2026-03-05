@@ -1,0 +1,114 @@
+App,ID,Finding,Status,Reproducible,Neo,Claude,Snyk,Invicti,Semgrep,Severity
+VaultBank,VB-001,Arbitrary Self-Deposit — Unlimited Money Creation,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,CRITICAL
+VaultBank,VB-002,Hardcoded JWT Secret Key,VALID,NO,TRUE,TRUE,FALSE,FALSE,FALSE,CRITICAL
+VaultBank,VB-003,Dispute Reversal Creates Money (Double-Spend),VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,CRITICAL
+VaultBank,VB-004,Dispute Resolution Allows Arbitrary Refund Amount,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,CRITICAL
+VaultBank,VB-005,Teller Operations Bypass Transaction Approval Limits,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
+VaultBank,VB-006,Stored XSS via User Profile Name Fields,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,HIGH
+VaultBank,VB-007,Manager Can Freeze/Unfreeze Any Account (No Branch Restriction),VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,HIGH
+VaultBank,VB-008,Unrestricted File Upload in Dispute Evidence,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,MEDIUM
+VaultBank,VB-009,WebSocket Token in URL,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,MEDIUM
+VaultBank,VB-010,Unvalidated disburse_to_account_id,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,MEDIUM
+VaultBank,VB-011,Unlimited Loan Amount,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,MEDIUM
+VaultBank,VB-012,No Password Complexity,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-013,JWT in localStorage,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-014,Rate Limiting Only on Auth,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-015,Client-Side Role Guards,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,MEDIUM
+VaultBank,VB-016,Refresh Token Endpoint Has No Rate Limiting,VALID,YES,FALSE,TRUE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-017,No Account Lockout After Failed Login Attempts,VALID,YES,FALSE,TRUE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-018,No Audit Logging for Privileged Operations,VALID,YES,FALSE,TRUE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-019,Server Version Disclosure,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-020,Password Change Non-Functional,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-021,Missing Security Headers,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-022,Truncated Reference Numbers,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-023,SQL Wildcard Injection,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-024,Insecure Account Number PRNG,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-025,Host Header Injection Accepted,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,LOW
+VaultBank,VB-026,HTTP Strict Transport Security (HSTS) Policy Not Enabled,VALID,YES,TRUE,FALSE,FALSE,TRUE,FALSE,INFO
+VaultBank,VB-027,Content Security Policy (CSP) Not Implemented,VALID,YES,TRUE,FALSE,FALSE,TRUE,FALSE,INFO
+VaultBank,VB-028,Path Traversal with FastAPI,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,FALSE,TRUE,NA
+VaultBank,VB-029,(Possible) Cross site scripting,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,TRUE,FALSE,NA
+VaultBank,VB-030,Session ID in URL,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,TRUE,FALSE,NA
+VaultBank,VB-031,Sensitive Data Exposure,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,TRUE,FALSE,NA
+VaultBank,VB-032,Old API Version Exposed,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,TRUE,FALSE,NA
+VaultBank,VB-033,Mass Assignment on User Profile Update,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+VaultBank,VB-034,Race Condition in Transfer Operations,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+VaultBank,VB-035,Unauthenticated Deposit Endpoint Design Flaw,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+VaultBank,VB-036,Uploaded Files Stored in Application Directory,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+VaultBank,VB-037,No CSRF Protection,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+VaultBank,VB-038,Approval Workflow Balance Check Doesn't Consider Holds,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+VaultBank,VB-039,Revoked Token Check Missing on Access Tokens,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+VaultBank,VB-040,No HTTPS Enforcement,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+VaultBank,VB-041,FastAPI Docs Enabled by Default,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+VaultBank,VB-042,psycopg2-binary in Production,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+VaultBank,VB-043,Open Redirect,FALSE POSITIVE,NO,FALSE,FALSE,TRUE,FALSE,FALSE,NA
+VaultBank,VB-044,Use of Hardcoded Passwords,FALSE POSITIVE,NO,FALSE,FALSE,TRUE,FALSE,FALSE,NA
+VaultBank,VB-045,Code Injection,FALSE POSITIVE,NO,FALSE,FALSE,TRUE,FALSE,FALSE,NA
+MedPortal,MED-001,Password Hash Exposure Across Multiple Endpoints,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
+MedPortal,MED-002,Privilege Escalation via Mass Assignment on User Update Endpoint,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
+MedPortal,MED-003,Mass Assignment Across All API Endpoints,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
+MedPortal,MED-004,Broken Object-Level Authorization (IDOR) — No Ownership Verification,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
+MedPortal,MED-005,Middleware Only Protects Dashboard Routes — No Defense-in-Depth for API,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
+MedPortal,MED-006,Search API Exposes All Data Without Role Restriction,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,MEDIUM
+MedPortal,MED-007,No Rate Limiting on Auth,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+MedPortal,MED-008,Missing Security Headers,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+MedPortal,MED-009,No Session Invalidation,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+MedPortal,MED-010,Weak Default Password in User Creation API,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+MedPortal,MED-011,No Input Length Validation,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+MedPortal,MED-012,Negative and Extreme Numeric Values Accepted,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,LOW
+MedPortal,MED-013,Empty Required Fields Accepted,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,LOW
+MedPortal,MED-014,Server Version Disclosure,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,INFO
+MedPortal,MED-015,HTTP Strict Transport Security (HSTS) Policy Not Enabled,VALID,YES,TRUE,FALSE,FALSE,TRUE,FALSE,INFO
+MedPortal,MED-016,Content Security Policy (CSP) Not Implemented,VALID,YES,TRUE,FALSE,FALSE,TRUE,FALSE,INFO
+MedPortal,MED-017,Outdated JavaScript libraries,VALID,YES,FALSE,FALSE,FALSE,TRUE,FALSE,INFO
+MedPortal,MED-018,X-Content-Type-Options (XCTO) Not Implemented,VALID,YES,FALSE,FALSE,FALSE,TRUE,FALSE,INFO
+MedPortal,MED-019,Verbose Error Messages Leak Internal State,VALID,YES,FALSE,TRUE,FALSE,FALSE,FALSE,INFO
+MedPortal,MED-020,Next.js Authorization Bypass Through User-Controlled Key Vulnerability,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,TRUE,FALSE,NA
+MedPortal,MED-021,Next.js Incorrect Authorization Vulnerability,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,TRUE,FALSE,NA
+MedPortal,MED-022,Next.js Allocation of Resources Without Limits or Throttling Vulnerability,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,TRUE,FALSE,NA
+MedPortal,MED-023,Next.js Missing Origin Validation in WebSockets Vulnerability,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,TRUE,FALSE,NA
+MedPortal,MED-024,Next.js Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') Vulnerability,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,TRUE,FALSE,NA
+MedPortal,MED-025,Notification Injection via Arbitrary User Targeting,FALSE POSITIVE,NO,TRUE,TRUE,FALSE,FALSE,FALSE,NA
+MedPortal,MED-026,Audit Log Forgery Any Authenticated User Can Write Logs,FALSE POSITIVE,NO,TRUE,TRUE,FALSE,FALSE,FALSE,NA
+MedPortal,MED-027,Hardcoded Demo Credentials Exposed in Client-Side Code,FALSE POSITIVE,NO,TRUE,TRUE,TRUE,FALSE,FALSE,NA
+MedPortal,MED-028,File Upload Path Traversal,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+MedPortal,MED-029,Prisma Client Singleton Exposed on Global,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+MedPortal,MED-030,No CORS Configuration,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+MedPortal,MED-031,Stale Demo Share Token in Seed Data,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+MedPortal,MED-032,User Enumeration via Timing Side-Channel,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+ClaimFlow,CF-001,Missing Authorization on Admin User Management Actions (createUser/updateUser),VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,CRITICAL
+ClaimFlow,CF-002,Deactivated User Retains Full Application Access,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,CRITICAL
+ClaimFlow,CF-003,Document Verification IDOR — No Ownership Check on Document ID,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
+ClaimFlow,CF-004,Systemic Password Hash Exposure via Drizzle ORM Relations,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,HIGH
+ClaimFlow,CF-005,Missing Authorization on Adjuster Claim Actions (updateStatus addNote verifyDocument),VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
+ClaimFlow,CF-006,Missing Authorization on Underwriter makeDecision Action,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,HIGH
+ClaimFlow,CF-007,Workflow API Mass Assignment via updateData Spread,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,MEDIUM
+ClaimFlow,CF-008,Adjuster updateStatus Bypasses Workflow Transition Validation,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,MEDIUM
+ClaimFlow,CF-009,Batch Operations Accessible to Adjuster Role + Bypass Workflow Rules,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,MEDIUM
+ClaimFlow,CF-010,Missing Authorization on Settlement Calculate Action,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,MEDIUM
+ClaimFlow,CF-011,Missing Role Check on Triage API — Any User Can Trigger Fraud Checks,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,MEDIUM
+ClaimFlow,CF-012,Missing Role Check on API Endpoints (Settlement GET Workflow GET),VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,MEDIUM
+ClaimFlow,CF-013,CSRF Protection Missing on API Endpoints (+server.ts),VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,MEDIUM
+ClaimFlow,CF-014,Unrestricted File Upload in Message Attachments (No MIME Validation),VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,MEDIUM
+ClaimFlow,CF-015,Weak Password Hashing — SHA-256 with Hardcoded Static Salt,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,MEDIUM
+ClaimFlow,CF-016,Session Cookie Missing Secure Flag in Non-Production,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+ClaimFlow,CF-017,Sessions Not Invalidated on Password Change,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+ClaimFlow,CF-018,No Rate Limiting on Login,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,LOW
+ClaimFlow,CF-019,Unlimited Concurrent Sessions — No Session Limit or Cleanup,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,LOW
+ClaimFlow,CF-020,Account Enumeration via Registration Error Messages,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,LOW
+ClaimFlow,CF-021,HTTP Strict Transport Security (HSTS) Policy Not Enabled,VALID,YES,TRUE,FALSE,FALSE,TRUE,FALSE,INFO
+ClaimFlow,CF-022,Content Security Policy (CSP) Not Implemented,VALID,YES,TRUE,FALSE,FALSE,TRUE,FALSE,INFO
+ClaimFlow,CF-023,Generic Email Address Disclosure,VALID,YES,FALSE,FALSE,FALSE,TRUE,FALSE,INFO
+ClaimFlow,CF-024,X-Content-Type-Options (XCTO) Not Implemented,VALID,YES,FALSE,FALSE,FALSE,TRUE,FALSE,INFO
+ClaimFlow,CF-025,path-join-resolve-traversal,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,FALSE,TRUE,NA
+ClaimFlow,CF-026,unsafe-formatstring,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,FALSE,TRUE,NA
+ClaimFlow,CF-027,Potential Sensitive Data Disclosure,FALSE POSITIVE,NO,FALSE,FALSE,FALSE,TRUE,FALSE,NA
+ClaimFlow,CF-028,Sensitive Data in CSV Export,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+ClaimFlow,CF-029,Internal Error Messages Exposed to Clients,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+ClaimFlow,CF-030,Timing-Unsafe Password Comparison,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+ClaimFlow,CF-031,File Upload MIME Type Spoofing,FALSE POSITIVE,NO,TRUE,TRUE,FALSE,FALSE,FALSE,NA
+ClaimFlow,CF-032,IDOR — Workflow API Exposes Any Claim Data,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+ClaimFlow,CF-033,Batch Operations Bypass Workflow Validation,FALSE POSITIVE,NO,TRUE,TRUE,FALSE,FALSE,FALSE,NA
+ClaimFlow,CF-034,Document Verification — No Document-to-Claim Validation,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+ClaimFlow,CF-035,Path Traversal in Upload Paths,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+ClaimFlow,CF-036,Use of Hardcoded Passwords,FALSE POSITIVE,NO,FALSE,FALSE,TRUE,FALSE,FALSE,NA

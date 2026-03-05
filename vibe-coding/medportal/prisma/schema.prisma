@@ -1,0 +1,481 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AppointmentStatus {
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+  PENDING
+  WAITLISTED
+}
+
+enum LabResultStatus {
+  NORMAL
+  ATTENTION
+  CRITICAL
+  PENDING_REVIEW
+}
+
+enum LabOrderStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum NotificationType {
+  APPOINTMENT
+  LAB_RESULT
+  PRESCRIPTION
+  MESSAGE
+  SYSTEM
+  REFERRAL
+}
+
+enum Role {
+  PATIENT
+  DOCTOR
+  NURSE
+  LAB_TECH
+  ADMIN
+}
+
+enum ReferralStatus {
+  PENDING
+  ACCEPTED
+  COMPLETED
+  DECLINED
+}
+
+enum RefillRequestStatus {
+  PENDING
+  APPROVED
+  DENIED
+}
+
+enum WaitlistStatus {
+  WAITING
+  OFFERED
+  BOOKED
+  CANCELLED
+}
+
+enum ShareLinkStatus {
+  ACTIVE
+  EXPIRED
+  REVOKED
+}
+
+enum AuditAction {
+  VIEW_RECORD
+  DOWNLOAD_RECORD
+  SHARE_LINK
+  UPDATE_RECORD
+}
+
+enum BulkImportStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+model User {
+  id               String           @id @default(cuid())
+  name             String
+  email            String           @unique
+  password         String
+  role             Role             @default(PATIENT)
+  patientProfile   Patient?
+  doctorProfile    Doctor?
+  nurseProfile     Nurse?
+  labTechProfile   LabTechnician?
+  adminProfile     AdminProfile?
+  notifications    Notification[]
+  sentMessages     Message[]        @relation("SentMessages")
+  receivedMessages Message[]        @relation("ReceivedMessages")
+  auditLogs        AuditLog[]
+  refillRequestsMade PrescriptionRefillRequest[] @relation("RefillRequester")
+  refillDecisions    PrescriptionRefillRequest[] @relation("RefillDecision")
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model Department {
+  id          String          @id @default(cuid())
+  name        String
+  description String?
+  doctors     Doctor[]
+  nurses      Nurse[]
+  labTechs    LabTechnician[]
+}
+
+model Patient {
+  id                  String         @id @default(cuid())
+  user                User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId              String         @unique
+  firstName           String
+  lastName            String
+  email               String         @unique
+  phone               String?
+  dateOfBirth         DateTime
+  gender              String?
+  addressLine1        String?
+  addressLine2        String?
+  city                String?
+  state               String?
+  postalCode          String?
+  medicalHistory      Json?
+  allergies           Json?
+  insuranceProvider   String?
+  insurancePlanNumber String?
+  insuranceGroupNumber String?
+  insurancePhone      String?
+  emergencyContact    String?
+  emergencyPhone      String?
+  primaryDoctor       Doctor?        @relation("PrimaryDoctor", fields: [primaryDoctorId], references: [id])
+  primaryDoctorId     String?
+  appointments        Appointment[]
+  medicalRecords      MedicalRecord[]
+  prescriptions       Prescription[]
+  labResults          LabResult[]
+  labOrders           LabOrder[]
+  vitals              Vital[]
+  messages            Message[]
+  referrals           Referral[]     @relation("PatientReferrals")
+  refillRequests      PrescriptionRefillRequest[]
+  shareLinks          MedicalShareLink[]
+  auditLogs           AuditLog[]
+  waitlistEntries     AppointmentWaitlist[]
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+}
+
+model Doctor {
+  id             String          @id @default(cuid())
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId         String          @unique
+  department     Department?     @relation(fields: [departmentId], references: [id])
+  departmentId   String?
+  specialty      String
+  bio            String?
+  availability   Json?
+  patients       Patient[]       @relation("PrimaryDoctor")
+  appointments   Appointment[]
+  medicalRecords MedicalRecord[]
+  prescriptions  Prescription[]
+  labResults     LabResult[]
+  labOrders      LabOrder[]
+  messages       Message[]
+  referralsStarted Referral[]     @relation("ReferralFromDoctor")
+  referralsReceived Referral[]    @relation("ReferralToDoctor")
+  refillApprovals PrescriptionRefillRequest[]
+  blockedSlots         DoctorAvailabilityBlock[]
+  waitlistEntries      AppointmentWaitlist[]
+  updatedPrescriptions Prescription[]  @relation("PrescriptionUpdatedBy")
+  reviewedLabResults   LabResult[]     @relation("ResultReviewedBy")
+  createdAt            DateTime        @default(now())
+  updatedAt            DateTime        @updatedAt
+}
+
+model Nurse {
+  id             String          @id @default(cuid())
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId         String          @unique
+  department     Department?     @relation(fields: [departmentId], references: [id])
+  departmentId   String?
+  title          String?
+  vitals         Vital[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+}
+
+model LabTechnician {
+  id           String        @id @default(cuid())
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId       String        @unique
+  department   Department?   @relation(fields: [departmentId], references: [id])
+  departmentId String?
+  labOrders    LabOrder[]    @relation("LabOrderTechnician")
+  labAttachments LabAttachment[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model AdminProfile {
+  id          String   @id @default(cuid())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String   @unique
+  permissions Json?
+  overrides   Appointment[] @relation("AppointmentOverrides")
+  bulkImports BulkImportJob[]
+}
+
+model Appointment {
+  id               String            @id @default(cuid())
+  patient          Patient           @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  patientId        String
+  doctor           Doctor            @relation(fields: [doctorId], references: [id], onDelete: SetNull)
+  doctorId         String
+  department       String
+  reason           String?
+  status           AppointmentStatus @default(SCHEDULED)
+  appointmentDate  DateTime
+  location         String?
+  notes            String?
+  checkInStatus    String?
+  recurrenceRule   String?
+  parentAppointment   Appointment?   @relation("AppointmentRecur", fields: [parentAppointmentId], references: [id])
+  parentAppointmentId String?
+  childAppointments   Appointment[]  @relation("AppointmentRecur")
+  overriddenBy     AdminProfile?    @relation("AppointmentOverrides", fields: [overriddenById], references: [id])
+  overriddenById   String?
+  waitlistOffers   AppointmentWaitlist[]
+  changeRequests   AppointmentChangeRequest[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+}
+
+model AppointmentWaitlist {
+  id         String        @id @default(cuid())
+  patient    Patient       @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  patientId  String
+  doctor     Doctor?       @relation(fields: [doctorId], references: [id])
+  doctorId   String?
+  status     WaitlistStatus @default(WAITING)
+  desiredDate DateTime
+  notes      String?
+  appointment Appointment? @relation(fields: [appointmentId], references: [id])
+  appointmentId String?
+  createdAt   DateTime      @default(now())
+}
+
+model AppointmentChangeRequest {
+  id            String     @id @default(cuid())
+  appointment   Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+  appointmentId String
+  requestedByPatient Boolean @default(true)
+  requestedTime DateTime
+  status        String      @default("pending")
+  adminNotes    String?
+  createdAt     DateTime    @default(now())
+  respondedAt   DateTime?
+}
+
+model DoctorAvailabilityBlock {
+  id        String   @id @default(cuid())
+  doctor    Doctor   @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  doctorId  String
+  startTime DateTime
+  endTime   DateTime
+  reason    String?
+  createdAt DateTime @default(now())
+}
+
+model MedicalRecord {
+  id          String   @id @default(cuid())
+  patient     Patient  @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  patientId   String
+  doctor      Doctor?  @relation(fields: [doctorId], references: [id])
+  doctorId    String?
+  title       String
+  visitDate   DateTime
+  department  String
+  summary     String
+  attachments Json?
+  createdAt   DateTime @default(now())
+}
+
+model Prescription {
+  id            String   @id @default(cuid())
+  patient       Patient  @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  patientId     String
+  doctor        Doctor   @relation(fields: [doctorId], references: [id])
+  doctorId      String
+  medication    String
+  dosage        String
+  frequency     String
+  instructions  String?
+  startDate     DateTime
+  endDate       DateTime?
+  refills       Int      @default(0)
+  refillsRemaining Int   @default(0)
+  expiresOn     DateTime?
+  updatedBy     Doctor?  @relation("PrescriptionUpdatedBy", fields: [updatedById], references: [id])
+  updatedById   String?
+  refillRequests PrescriptionRefillRequest[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model PrescriptionRefillRequest {
+  id            String             @id @default(cuid())
+  prescription  Prescription       @relation(fields: [prescriptionId], references: [id], onDelete: Cascade)
+  prescriptionId String
+  patient       Patient            @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  patientId     String
+  doctor        Doctor?            @relation(fields: [doctorId], references: [id])
+  doctorId      String?
+  requestedBy   User               @relation("RefillRequester", fields: [requestedById], references: [id], onDelete: Cascade)
+  requestedById String
+  status        RefillRequestStatus @default(PENDING)
+  message       String?
+  denialReason  String?
+  decisionBy    User?              @relation("RefillDecision", fields: [decisionById], references: [id])
+  decisionById  String?
+  decidedAt     DateTime?
+  createdAt     DateTime           @default(now())
+}
+
+model LabResult {
+  id             String          @id @default(cuid())
+  patient        Patient         @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  patientId      String
+  doctor         Doctor?         @relation(fields: [doctorId], references: [id])
+  doctorId       String?
+  labOrder       LabOrder?       @relation(fields: [labOrderId], references: [id])
+  labOrderId     String?         @unique
+  testName       String
+  resultDate     DateTime
+  resultSummary  String
+  status         LabResultStatus @default(PENDING_REVIEW)
+  value          String?
+  referenceRange String?
+  attachmentUrl  String?
+  reviewNotes    String?
+  reviewedBy     Doctor?         @relation("ResultReviewedBy", fields: [reviewedById], references: [id])
+  reviewedById   String?
+  releasedAt     DateTime?
+  createdAt      DateTime        @default(now())
+  attachments    LabAttachment[]
+}
+
+model LabAttachment {
+  id           String        @id @default(cuid())
+  labResult    LabResult     @relation(fields: [labResultId], references: [id], onDelete: Cascade)
+  labResultId  String
+  technician   LabTechnician @relation(fields: [technicianId], references: [id])
+  technicianId String
+  fileName     String
+  fileUrl      String
+  fileType     String
+  uploadedAt   DateTime      @default(now())
+}
+
+model LabOrder {
+  id             String        @id @default(cuid())
+  patient        Patient       @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  patientId      String
+  doctor         Doctor        @relation(fields: [doctorId], references: [id])
+  doctorId       String
+  technician     LabTechnician? @relation("LabOrderTechnician", fields: [technicianId], references: [id])
+  technicianId   String?
+  status         LabOrderStatus @default(PENDING)
+  testName       String
+  priority       String?
+  notes          String?
+  attachments    Json?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  labResult      LabResult?
+}
+
+model Vital {
+  id              String   @id @default(cuid())
+  patient         Patient  @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  patientId       String
+  nurse           Nurse?   @relation(fields: [nurseId], references: [id])
+  nurseId         String?
+  recordedAt      DateTime @default(now())
+  heartRate       Int?
+  bloodPressure   String?
+  temperature     Float?
+  respiratoryRate Int?
+  notes           String?
+}
+
+model Notification {
+  id          String           @id @default(cuid())
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String
+  type        NotificationType
+  title       String
+  description String
+  link        String?
+  readAt      DateTime?
+  createdAt   DateTime         @default(now())
+}
+
+model Message {
+  id          String   @id @default(cuid())
+  sender      User     @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  senderId    String
+  recipient   User     @relation("ReceivedMessages", fields: [recipientId], references: [id], onDelete: Cascade)
+  recipientId String
+  patient     Patient? @relation(fields: [patientId], references: [id])
+  patientId   String?
+  doctor      Doctor?  @relation(fields: [doctorId], references: [id])
+  doctorId    String?
+  content     String
+  createdAt   DateTime @default(now())
+  readAt      DateTime?
+}
+
+model Referral {
+  id           String         @id @default(cuid())
+  patient      Patient        @relation("PatientReferrals", fields: [patientId], references: [id], onDelete: Cascade)
+  patientId    String
+  fromDoctor   Doctor         @relation("ReferralFromDoctor", fields: [fromDoctorId], references: [id])
+  fromDoctorId String
+  toDoctor     Doctor         @relation("ReferralToDoctor", fields: [toDoctorId], references: [id])
+  toDoctorId   String
+  status       ReferralStatus @default(PENDING)
+  reason       String
+  notes        String?
+  expiresAt    DateTime?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model MedicalShareLink {
+  id         String         @id @default(cuid())
+  patient    Patient        @relation(fields: [patientId], references: [id], onDelete: Cascade)
+  patientId  String
+  token      String         @unique
+  status     ShareLinkStatus @default(ACTIVE)
+  expiresAt  DateTime
+  createdAt  DateTime       @default(now())
+  accessCount Int           @default(0)
+}
+
+model AuditLog {
+  id          String      @id @default(cuid())
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String
+  patient     Patient?    @relation(fields: [patientId], references: [id])
+  patientId   String?
+  action      AuditAction
+  resourceType String
+  resourceId  String
+  details     Json?
+  createdAt   DateTime    @default(now())
+}
+
+model BulkImportJob {
+  id          String          @id @default(cuid())
+  admin       AdminProfile    @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  adminId     String
+  fileName    String
+  status      BulkImportStatus @default(PENDING)
+  totalRows   Int?
+  processedRows Int?         @default(0)
+  errorReport Json?
+  createdAt   DateTime        @default(now())
+  completedAt DateTime?
+}
