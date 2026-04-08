@@ -38,7 +38,7 @@
 		"@skeletonlabs/skeleton": "^3.2.2",
 		"@skeletonlabs/skeleton-svelte": "^1.5.3",
 		"date-fns": "^4.1.0",
-		"drizzle-orm": "^0.45.1",
+		"drizzle-orm": "^0.45.2",
 		"lucide-svelte": "^0.574.0",
 		"uuid": "^13.0.0"
 	}
