@@ -45,6 +45,11 @@ VaultBank,VB-042,psycopg2-binary in Production,FALSE POSITIVE,NO,FALSE,TRUE,FALS
 VaultBank,VB-043,Open Redirect,FALSE POSITIVE,NO,FALSE,FALSE,TRUE,FALSE,FALSE,NA
 VaultBank,VB-044,Use of Hardcoded Passwords,FALSE POSITIVE,NO,FALSE,FALSE,TRUE,FALSE,FALSE,NA
 VaultBank,VB-045,Code Injection,FALSE POSITIVE,NO,FALSE,FALSE,TRUE,FALSE,FALSE,NA
+VaultBank,VB-048,Teller Self-Transaction — No Self-Transaction Controls on Deposit/Withdrawal,VALID,YES,FALSE,FALSE,FALSE,FALSE,FALSE,CRITICAL
+VaultBank,VB-049,Branch Manager Transfers Bypass Approval and Dual-Approval Thresholds,VALID,YES,FALSE,FALSE,FALSE,FALSE,FALSE,HIGH
+VaultBank,VB-050,Bill Payment Bypasses Transaction Approval Threshold,VALID,YES,FALSE,FALSE,FALSE,FALSE,FALSE,HIGH
+VaultBank,VB-051,Loan Approval Workflow Bypass — Compliance Review Skipped,VALID,YES,FALSE,FALSE,FALSE,FALSE,FALSE,HIGH
+VaultBank,VB-052,Race Condition in Teller Deposit Creates Phantom Transactions,VALID,YES,FALSE,FALSE,FALSE,FALSE,FALSE,HIGH
 MedPortal,MED-001,Password Hash Exposure Across Multiple Endpoints,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
 MedPortal,MED-002,Privilege Escalation via Mass Assignment on User Update Endpoint,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
 MedPortal,MED-003,Mass Assignment Across All API Endpoints,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
@@ -78,6 +83,10 @@ MedPortal,MED-029,Prisma Client Singleton Exposed on Global,FALSE POSITIVE,NO,FA
 MedPortal,MED-030,No CORS Configuration,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
 MedPortal,MED-031,Stale Demo Share Token in Seed Data,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
 MedPortal,MED-032,User Enumeration via Timing Side-Channel,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
+MedPortal,MED-034,Patient Can Overwrite userId via Mass Assignment — Account Association Hijack,VALID,YES,FALSE,FALSE,FALSE,FALSE,FALSE,CRITICAL
+MedPortal,MED-035,IDOR — Any Patient Can Modify or Delete Any Appointment (No Ownership Check),VALID,YES,FALSE,FALSE,FALSE,FALSE,FALSE,HIGH
+MedPortal,MED-036,Share Link Revocation Bypass — Deactivated Links Remain Functional,VALID,YES,FALSE,FALSE,FALSE,FALSE,FALSE,HIGH
+MedPortal,MED-037,Lab Order Workflow State Bypass — Invalid Transitions Accepted,VALID,YES,FALSE,FALSE,FALSE,FALSE,FALSE,HIGH
 ClaimFlow,CF-001,Missing Authorization on Admin User Management Actions (createUser/updateUser),VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,CRITICAL
 ClaimFlow,CF-002,Deactivated User Retains Full Application Access,VALID,YES,TRUE,FALSE,FALSE,FALSE,FALSE,CRITICAL
 ClaimFlow,CF-003,Document Verification IDOR — No Ownership Check on Document ID,VALID,YES,TRUE,TRUE,FALSE,FALSE,FALSE,HIGH
@@ -114,3 +123,4 @@ ClaimFlow,CF-033,Batch Operations Bypass Workflow Validation,FALSE POSITIVE,NO,T
 ClaimFlow,CF-034,Document Verification — No Document-to-Claim Validation,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
 ClaimFlow,CF-035,Path Traversal in Upload Paths,FALSE POSITIVE,NO,FALSE,TRUE,FALSE,FALSE,FALSE,NA
 ClaimFlow,CF-036,Use of Hardcoded Passwords,FALSE POSITIVE,NO,FALSE,FALSE,TRUE,FALSE,FALSE,NA
+ClaimFlow,CF-037,IDOR — Cross-User Claim Action Execution via Direct Object Reference,VALID,YES,FALSE,FALSE,FALSE,FALSE,FALSE,CRITICAL
