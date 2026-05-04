@@ -40,6 +40,6 @@
 		"date-fns": "^4.1.0",
 		"drizzle-orm": "^0.45.1",
 		"lucide-svelte": "^0.574.0",
-		"uuid": "^13.0.0"
+		"uuid": "^14.0.0"
 	}
 }
