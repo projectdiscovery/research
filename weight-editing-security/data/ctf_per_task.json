@@ -1,0 +1,984 @@
+{
+  "per_task": [
+    {
+      "task_id": 0,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 2,
+      "base_solved": 2,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.3333333333333333,
+      "edit_rate": 0.6666666666666666,
+      "diff": 0.3333333333333333
+    },
+    {
+      "task_id": 3,
+      "base_solved": 1,
+      "base_attempts": 6,
+      "edit_solved": 3,
+      "edit_attempts": 6,
+      "base_rate": 0.16666666666666666,
+      "edit_rate": 0.5,
+      "diff": 0.33333333333333337
+    },
+    {
+      "task_id": 4,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 1.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 5,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 1.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 6,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 7,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 8,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.6666666666666666,
+      "diff": 0.16666666666666663
+    },
+    {
+      "task_id": 9,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 10,
+      "base_solved": 4,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.6666666666666666,
+      "edit_rate": 0.6666666666666666,
+      "diff": 0.0
+    },
+    {
+      "task_id": 11,
+      "base_solved": 5,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.8333333333333334,
+      "edit_rate": 0.6666666666666666,
+      "diff": -0.16666666666666674
+    },
+    {
+      "task_id": 12,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 13,
+      "base_solved": 4,
+      "base_attempts": 6,
+      "edit_solved": 2,
+      "edit_attempts": 6,
+      "base_rate": 0.6666666666666666,
+      "edit_rate": 0.3333333333333333,
+      "diff": -0.3333333333333333
+    },
+    {
+      "task_id": 15,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 16,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 17,
+      "base_solved": 4,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.6666666666666666,
+      "edit_rate": 0.6666666666666666,
+      "diff": 0.0
+    },
+    {
+      "task_id": 18,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 0.8333333333333334,
+      "diff": -0.16666666666666663
+    },
+    {
+      "task_id": 19,
+      "base_solved": 5,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 0.8333333333333334,
+      "edit_rate": 1.0,
+      "diff": 0.16666666666666663
+    },
+    {
+      "task_id": 20,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 21,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.8333333333333334,
+      "diff": 0.33333333333333337
+    },
+    {
+      "task_id": 22,
+      "base_solved": 1,
+      "base_attempts": 6,
+      "edit_solved": 2,
+      "edit_attempts": 6,
+      "base_rate": 0.16666666666666666,
+      "edit_rate": 0.3333333333333333,
+      "diff": 0.16666666666666666
+    },
+    {
+      "task_id": 23,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 1.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 24,
+      "base_solved": 5,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 0.8333333333333334,
+      "edit_rate": 1.0,
+      "diff": 0.16666666666666663
+    },
+    {
+      "task_id": 25,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 0.8333333333333334,
+      "diff": -0.16666666666666663
+    },
+    {
+      "task_id": 26,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 0.8333333333333334,
+      "diff": -0.16666666666666663
+    },
+    {
+      "task_id": 27,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 0.8333333333333334,
+      "diff": -0.16666666666666663
+    },
+    {
+      "task_id": 28,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 29,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 30,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 0.8333333333333334,
+      "diff": -0.16666666666666663
+    },
+    {
+      "task_id": 31,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 1.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 32,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 1.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 33,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.6666666666666666,
+      "diff": 0.16666666666666663
+    },
+    {
+      "task_id": 34,
+      "base_solved": 5,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 0.8333333333333334,
+      "edit_rate": 1.0,
+      "diff": 0.16666666666666663
+    },
+    {
+      "task_id": 35,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 36,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 1.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 37,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 1.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 38,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 1.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 39,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 40,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 0.8333333333333334,
+      "diff": -0.16666666666666663
+    },
+    {
+      "task_id": 41,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 42,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 43,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 44,
+      "base_solved": 5,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 0.8333333333333334,
+      "edit_rate": 1.0,
+      "diff": 0.16666666666666663
+    },
+    {
+      "task_id": 45,
+      "base_solved": 5,
+      "base_attempts": 6,
+      "edit_solved": 3,
+      "edit_attempts": 6,
+      "base_rate": 0.8333333333333334,
+      "edit_rate": 0.5,
+      "diff": -0.33333333333333337
+    },
+    {
+      "task_id": 46,
+      "base_solved": 5,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 0.8333333333333334,
+      "edit_rate": 0.8333333333333334,
+      "diff": 0.0
+    },
+    {
+      "task_id": 47,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.6666666666666666,
+      "diff": 0.16666666666666663
+    },
+    {
+      "task_id": 48,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.8333333333333334,
+      "diff": 0.33333333333333337
+    },
+    {
+      "task_id": 49,
+      "base_solved": 4,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 0.6666666666666666,
+      "edit_rate": 0.8333333333333334,
+      "diff": 0.16666666666666674
+    },
+    {
+      "task_id": 50,
+      "base_solved": 4,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 0.6666666666666666,
+      "edit_rate": 1.0,
+      "diff": 0.33333333333333337
+    },
+    {
+      "task_id": 51,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 3,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.5,
+      "diff": 0.0
+    },
+    {
+      "task_id": 52,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 1.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 53,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 0.8333333333333334,
+      "diff": -0.16666666666666663
+    },
+    {
+      "task_id": 54,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 55,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 56,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 57,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 58,
+      "base_solved": 5,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 0.8333333333333334,
+      "edit_rate": 0.8333333333333334,
+      "diff": 0.0
+    },
+    {
+      "task_id": 59,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 60,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.6666666666666666,
+      "diff": 0.16666666666666663
+    },
+    {
+      "task_id": 61,
+      "base_solved": 4,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 0.6666666666666666,
+      "edit_rate": 1.0,
+      "diff": 0.33333333333333337
+    },
+    {
+      "task_id": 62,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 63,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 0.6666666666666666,
+      "diff": -0.33333333333333337
+    },
+    {
+      "task_id": 64,
+      "base_solved": 4,
+      "base_attempts": 6,
+      "edit_solved": 1,
+      "edit_attempts": 6,
+      "base_rate": 0.6666666666666666,
+      "edit_rate": 0.16666666666666666,
+      "diff": -0.5
+    },
+    {
+      "task_id": 65,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 1.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 66,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 67,
+      "base_solved": 2,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.3333333333333333,
+      "edit_rate": 0.6666666666666666,
+      "diff": 0.3333333333333333
+    },
+    {
+      "task_id": 68,
+      "base_solved": 5,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 0.8333333333333334,
+      "edit_rate": 1.0,
+      "diff": 0.16666666666666663
+    },
+    {
+      "task_id": 69,
+      "base_solved": 1,
+      "base_attempts": 6,
+      "edit_solved": 1,
+      "edit_attempts": 6,
+      "base_rate": 0.16666666666666666,
+      "edit_rate": 0.16666666666666666,
+      "diff": 0.0
+    },
+    {
+      "task_id": 70,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 71,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 3,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.5,
+      "diff": 0.0
+    },
+    {
+      "task_id": 72,
+      "base_solved": 1,
+      "base_attempts": 6,
+      "edit_solved": 1,
+      "edit_attempts": 6,
+      "base_rate": 0.16666666666666666,
+      "edit_rate": 0.16666666666666666,
+      "diff": 0.0
+    },
+    {
+      "task_id": 73,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 74,
+      "base_solved": 4,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 0.6666666666666666,
+      "edit_rate": 0.8333333333333334,
+      "diff": 0.16666666666666674
+    },
+    {
+      "task_id": 75,
+      "base_solved": 4,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 0.6666666666666666,
+      "edit_rate": 0.8333333333333334,
+      "diff": 0.16666666666666674
+    },
+    {
+      "task_id": 76,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 77,
+      "base_solved": 1,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.16666666666666666,
+      "edit_rate": 0.6666666666666666,
+      "diff": 0.5
+    },
+    {
+      "task_id": 78,
+      "base_solved": 5,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 0.8333333333333334,
+      "edit_rate": 1.0,
+      "diff": 0.16666666666666663
+    },
+    {
+      "task_id": 79,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.6666666666666666,
+      "diff": 0.16666666666666663
+    },
+    {
+      "task_id": 80,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 1,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.16666666666666666,
+      "diff": -0.33333333333333337
+    },
+    {
+      "task_id": 81,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.8333333333333334,
+      "diff": 0.33333333333333337
+    },
+    {
+      "task_id": 82,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 83,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 84,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 85,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 86,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 87,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 88,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 89,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 90,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 0.8333333333333334,
+      "diff": -0.16666666666666663
+    },
+    {
+      "task_id": 91,
+      "base_solved": 5,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 0.8333333333333334,
+      "edit_rate": 0.8333333333333334,
+      "diff": 0.0
+    },
+    {
+      "task_id": 92,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 3,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 0.5,
+      "diff": 0.0
+    },
+    {
+      "task_id": 93,
+      "base_solved": 4,
+      "base_attempts": 6,
+      "edit_solved": 3,
+      "edit_attempts": 6,
+      "base_rate": 0.6666666666666666,
+      "edit_rate": 0.5,
+      "diff": -0.16666666666666663
+    },
+    {
+      "task_id": 94,
+      "base_solved": 6,
+      "base_attempts": 6,
+      "edit_solved": 5,
+      "edit_attempts": 6,
+      "base_rate": 1.0,
+      "edit_rate": 0.8333333333333334,
+      "diff": -0.16666666666666663
+    },
+    {
+      "task_id": 95,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 0,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.0,
+      "diff": 0.0
+    },
+    {
+      "task_id": 96,
+      "base_solved": 4,
+      "base_attempts": 6,
+      "edit_solved": 4,
+      "edit_attempts": 6,
+      "base_rate": 0.6666666666666666,
+      "edit_rate": 0.6666666666666666,
+      "diff": 0.0
+    },
+    {
+      "task_id": 97,
+      "base_solved": 2,
+      "base_attempts": 6,
+      "edit_solved": 2,
+      "edit_attempts": 6,
+      "base_rate": 0.3333333333333333,
+      "edit_rate": 0.3333333333333333,
+      "diff": 0.0
+    },
+    {
+      "task_id": 98,
+      "base_solved": 3,
+      "base_attempts": 6,
+      "edit_solved": 6,
+      "edit_attempts": 6,
+      "base_rate": 0.5,
+      "edit_rate": 1.0,
+      "diff": 0.5
+    },
+    {
+      "task_id": 99,
+      "base_solved": 0,
+      "base_attempts": 6,
+      "edit_solved": 3,
+      "edit_attempts": 6,
+      "base_rate": 0.0,
+      "edit_rate": 0.5,
+      "diff": 0.5
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "experiment": {
+    "base_model": "Qwen3.5-9B",
+    "editor": "GPT-6 Astra",
+    "training_used": false,
+    "gradient_descent_used": false,
+    "edited_tensor_count": 1
+  },
+  "quiz_600": {
+    "evidence": "aggregate_only_per_item_outputs_not_preserved",
+    "base": {"correct_rate": 0.630, "cut_off_before_answering": 207, "questions": 600},
+    "edited": {"correct_rate": 0.768, "cut_off_before_answering": 97, "questions": 600},
+    "seceval": {"base_correct_rate": 0.325, "edited_correct_rate": 0.515},
+    "cybermetric_500": {"base_correct_rate": 0.705, "edited_correct_rate": 0.860},
+    "secqa": {"base_correct_rate": 0.860, "edited_correct_rate": 0.930}
+  },
+  "fresh_seceval_192": {
+    "evidence": "preserved_aggregate_counts_no_per_item_outputs",
+    "base": {"questions": 192, "correct": 53, "cut_off_before_answering": 135, "completed_incorrect": 4},
+    "edited": {"questions": 192, "correct": 80, "cut_off_before_answering": 93, "completed_incorrect": 19},
+    "paired": {"rescues": 29, "regressions": 2}
+  },
+  "ctf_98": {
+    "evidence": "per_task_counts_released",
+    "tasks": 98,
+    "attempts_per_task_per_model": 6,
+    "base_solved_attempts": 269,
+    "edited_solved_attempts": 287
+  },
+  "code_review_90_pairs": {
+    "evidence": "aggregate_only_per_item_outputs_not_preserved",
+    "base": {"cut_off_before_verdict": 98, "reviews": 180, "detection_rate": 0.156, "false_positive_rate": 0.044, "balanced_accuracy": 0.556},
+    "edited": {"cut_off_before_verdict": 32, "reviews": 180, "detection_rate": 0.267, "false_positive_rate": 0.133, "balanced_accuracy": 0.567}
+  },
+  "code_review_39_fixes": {
+    "evidence": "preserved_aggregate_counts_no_per_item_outputs",
+    "jointly_completed": {
+      "base": {"vulnerable_reviews": 29, "patched_reviews": 31, "true_positives": 9, "false_positives": 4},
+      "edited": {"vulnerable_reviews": 29, "patched_reviews": 31, "true_positives": 8, "false_positives": 3}
+    }
+  }
+}
+
